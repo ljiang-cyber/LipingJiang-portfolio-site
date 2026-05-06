@@ -1,52 +1,164 @@
-body {
+/* =========================
+   BASE RESET
+========================= */
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Helvetica, Arial, sans-serif;
   background: #fff;
   color: #111;
+  line-height: 1.4;
 }
 
-/* 头部 */
-header {
-  padding: 40px 20px;
-  font-size: 24px;
+/* =========================
+   INDEX PAGE
+========================= */
+
+.header {
+  padding: 60px 20px 30px;
 }
 
-/* 横向滚动 */
-.scroll-section {
+.header h1 {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.header p {
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+/* =========================
+   MARQUEE NAVIGATION
+========================= */
+
+.nav {
+  border-top: 1px solid #eee;
+}
+
+.marquee {
   overflow: hidden;
   white-space: nowrap;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 
-.scroll-text {
+.marquee a {
   display: inline-block;
-  animation: scroll 15s linear infinite;
-}
-
-.scroll-text a {
-  margin: 0 40px;
-  font-size: 40px;
+  padding: 20px 0;
+  font-size: 22px;
   text-decoration: none;
   color: #111;
+  animation: scroll 18s linear infinite;
 }
 
-/* 动画 */
+/* smooth infinite scroll */
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-/* 关于 */
-.about {
-  padding: 40px 20px;
+/* pause on hover */
+.marquee:hover a {
+  animation-play-state: paused;
+}
+
+/* =========================
+   PAGE LAYOUT (ALL SECTIONS)
+========================= */
+
+.page {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page h1 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   GRID (WORKS)
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.grid img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid img:hover {
+  transform: scale(1.02);
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-page h1 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.about-page p {
+  margin-bottom: 10px;
+}
+
+.contact {
+  margin-top: 30px;
   font-size: 16px;
+  line-height: 1.8;
 }
 
-/* 响应式（关键） */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
-  .scroll-text a {
-    font-size: 24px;
-    margin: 0 20px;
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .marquee a {
+    font-size: 16px;
+  }
+
+  .page h1 {
+    font-size: 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
