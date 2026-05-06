@@ -1,164 +1,56 @@
-/* =========================
-   BASE RESET
-========================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: Helvetica, Arial, sans-serif;
   background: #fff;
   color: #111;
-  line-height: 1.4;
 }
 
-/* =========================
-   INDEX PAGE
-========================= */
-
-.header {
-  padding: 60px 20px 30px;
+/* HERO */
+.hero {
+  padding: 80px 20px 40px;
 }
 
-.header h1 {
-  font-size: 40px;
+.hero h1 {
+  font-size: 48px;
   font-weight: 400;
   letter-spacing: 2px;
 }
 
-.header p {
+/* WORKS */
+.works {
+  padding: 20px;
+}
+
+.work-item {
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.work-item:hover {
+  transform: translateX(10px);
+}
+
+.work-item h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.work-item p {
   opacity: 0.6;
   margin-top: 5px;
 }
 
-/* =========================
-   MARQUEE NAVIGATION
-========================= */
-
-.nav {
-  border-top: 1px solid #eee;
-}
-
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  border-bottom: 1px solid #eee;
-}
-
-.marquee a {
-  display: inline-block;
-  padding: 20px 0;
-  font-size: 22px;
+/* LINKS */
+a {
   text-decoration: none;
-  color: #111;
-  animation: scroll 18s linear infinite;
+  color: inherit;
 }
 
-/* smooth infinite scroll */
-@keyframes scroll {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* pause on hover */
-.marquee:hover a {
-  animation-play-state: paused;
-}
-
-/* =========================
-   PAGE LAYOUT (ALL SECTIONS)
-========================= */
-
-.page {
+/* FOOTER */
+footer {
   padding: 60px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.page h1 {
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.subtitle {
   font-size: 14px;
   opacity: 0.6;
-  margin-bottom: 40px;
-}
-
-/* =========================
-   GRID (WORKS)
-========================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.grid img {
-  width: 100%;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.grid img:hover {
-  transform: scale(1.02);
-}
-
-/* =========================
-   ABOUT PAGE
-========================= */
-
-.about-page {
-  padding: 80px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.about-page h1 {
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.about-page p {
-  margin-bottom: 10px;
-}
-
-.contact {
-  margin-top: 30px;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-  .header h1 {
-    font-size: 28px;
-  }
-
-  .marquee a {
-    font-size: 16px;
-  }
-
-  .page h1 {
-    font-size: 22px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
 }
